@@ -2,6 +2,18 @@
   height: 200px;
 }
 
+.hourHalfSection{
+	height: 100px;
+}
+
+.dottedBorderTop{
+	border-top: 1px dotted gray;
+}
+
+.solidBorderBottom{
+	border-bottom: 1px solid black;
+}
+
 .hourLine{
   border-bottom: 1px solid;
   border-top: 1px solid;
