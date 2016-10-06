@@ -31,13 +31,34 @@ function Calendar(props) {
         <div className="col-xs-2">.col-xs-2</div>
         <div className="col-xs-10">.col-xs-10</div>
       </div>
-      <div className={`row ${styles.hourSection}`}>Nadeem</div>
-      <div className={`row ${styles.hourSection}`}>Nadeem</div>
-      <div className={`row ${styles.hourSection}`}>Nadeem</div>
-      <div className={`row ${styles.hourSection}`}>Nadeem</div>
-      <div className={`row ${styles.hourSection}`}>Nadeem</div>
-      <div className={`row ${styles.hourSection}`}>Nadeem</div>
-      <div className={`row ${styles.hourSection}`}>Nadeem</div>
+      <div className={`row ${styles.hourSection}`}>
+        <div className="col-xs-2">.col-xs-2</div>
+        <div className="col-xs-10">.col-xs-10</div>
+      </div>
+      <div className={`row ${styles.hourSection}`}>
+        <div className="col-xs-2">.col-xs-2</div>
+        <div className="col-xs-10">.col-xs-10</div>
+      </div>
+      <div className={`row ${styles.hourSection}`}>
+        <div className="col-xs-2">.col-xs-2</div>
+        <div className="col-xs-10">.col-xs-10</div>
+      </div>
+      <div className={`row ${styles.hourSection}`}>
+        <div className="col-xs-2">.col-xs-2</div>
+        <div className="col-xs-10">.col-xs-10</div>
+      </div>
+      <div className={`row ${styles.hourSection}`}>
+        <div className="col-xs-2">.col-xs-2</div>
+        <div className="col-xs-10">.col-xs-10</div>
+      </div>
+      <div className={`row ${styles.hourSection}`}>
+        <div className="col-xs-2">.col-xs-2</div>
+        <div className="col-xs-10">.col-xs-10</div>
+      </div>
+      <div className={`row ${styles.hourSection}`}>
+        <div className="col-xs-2">.col-xs-2</div>
+        <div className="col-xs-10">.col-xs-10</div>
+      </div>
     </div>
   );
 }
