@@ -1,0 +1,152 @@
+[
+  {
+    "id": "app.components.LocaleToggle.de",
+    "defaultMessage": "de",
+    "message": ""
+  },
+  {
+    "id": "app.components.LocaleToggle.en",
+    "defaultMessage": "en",
+    "message": ""
+  },
+  {
+    "id": "react.calendar.components.Footer.author.message",
+    "defaultMessage": "Made with love by {author}.",
+    "message": "Mit Liebe gemacht von {author}."
+  },
+  {
+    "id": "react.calendar.components.Footer.license.message",
+    "defaultMessage": "This project is licensed under the MIT license.",
+    "message": "Dieses Projekt wird unter der MIT-Lizenz veröffentlicht."
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.css.header",
+    "defaultMessage": "Features",
+    "message": ""
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.css.message",
+    "defaultMessage": "Next generation CSS",
+    "message": "Die nächste Generation von CSS"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.feedback.header",
+    "defaultMessage": "Instant feedback",
+    "message": "Sofortiges Feedback"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.feedback.message",
+    "defaultMessage": "Enjoy the best DX and code your app at the speed of thought! Your\n    saved changes to the CSS and JS are reflected instantaneously\n    without refreshing the page. Preserve application state even when\n    you update something in the underlying code!",
+    "message": "Genießen Sie die beste Entwicklungserfahrung und programmieren Sie Ihre App so schnell wie noch nie! Ihre Änderungen an dem CSS und JavaScript sind sofort reflektiert, ohne die Seite aktualisieren zu müssen. So bleibt der Anwendungszustand bestehen, auch wenn Sie etwas in dem darunter liegenden Code aktualisieren!"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.header",
+    "defaultMessage": "Features",
+    "message": ""
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.home",
+    "defaultMessage": "Home",
+    "message": ""
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.internationalization.header",
+    "defaultMessage": "Complete i18n Standard Internationalization & Pluralization",
+    "message": "Komplette i18n Standard-Internationalisierung und Pluralisierung"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.internationalization.message",
+    "defaultMessage": "Scalable apps need to support multiple languages, easily add and support multiple languages with `react-intl`.",
+    "message": "Das Internet ist global. Mehrsprachige- und Pluralisierungsunterstützung ist entscheidend für große Web-Anwendungen."
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.javascript.header",
+    "defaultMessage": "Next generation JavaScript",
+    "message": "Die nächste Generation von JavaScript"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.javascript.message",
+    "defaultMessage": "Use template strings, object destructuring, arrow functions, JSX\n    syntax and more, today.",
+    "message": "Benutzen Sie ES6 template strings, object destructuring, arrow functions, JSX syntax und mehr, heute."
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.network.header",
+    "defaultMessage": "Offline-first",
+    "message": ""
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.network.message",
+    "defaultMessage": "The next frontier in performant web apps: availability without a\n      network connection from the instant your users load the app.",
+    "message": "Die nächste Schwelle für performanten Web-Anwendungen: Verfügbarkeit ohne Netzwerkverbindung wenn Ihre Benutzer die App einmal heruntergeladen haben."
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.routing.header",
+    "defaultMessage": "Industry-standard routing",
+    "message": "Standard Routing"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.routing.message",
+    "defaultMessage": "Write composable CSS that's co-located with your components for\n    complete modularity. Unique generated class names keep the\n    specificity low while eliminating style clashes. Ship only the\n    styles that are on the page for the best performance.",
+    "message": "Schreiben Sie CSS, das am selben Ort wie ihre Komponenten ist. Deterministisch generierte, einzigartige Klassennamen halten die Spezifität niedrig während styling Konflikte vermieden werden. Senden Sie nur das CSS an ihre Benutzer welches dann wirklich sichtbar ist für die schnellste Performance!"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.scaffolding.header",
+    "defaultMessage": "Quick scaffolding",
+    "message": "Schnelles Scaffolding"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.scaffolding.message",
+    "defaultMessage": "Automate the creation of components, containers, routes, selectors\n  and sagas - and their tests - right from the CLI!",
+    "message": "Automatisieren Sie die Kreation von Komponenten, Containern, Routen, Selektoren und Sagas – und ihre Tests – direkt von dem Terminal!"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.state_management.header",
+    "defaultMessage": "Predictable state management",
+    "message": "Berechenbare Stateverwaltung"
+  },
+  {
+    "id": "react.calendar.containers.FeaturePage.state_management.message",
+    "defaultMessage": "Unidirectional data flow allows for change logging and time travel\n    debugging.",
+    "message": "Unidirectional data flow erlaubt uns alle Änderungen ihrer Applikation zu loggen und time travel debugging einzusetzen."
+  },
+  {
+    "id": "react.calendar.containers.HomePage.features.Button",
+    "defaultMessage": "Features",
+    "message": ""
+  },
+  {
+    "id": "react.calendar.containers.HomePage.start_project.header",
+    "defaultMessage": "Start your next react project in seconds",
+    "message": "Beginnen Sie Ihr nächstes React Projekt in Sekunden"
+  },
+  {
+    "id": "react.calendar.containers.HomePage.start_project.message",
+    "defaultMessage": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+    "message": "Ein skalierendes, offline-first Fundament mit der besten DX und einem Fokus auf Performance und bewährte Methoden"
+  },
+  {
+    "id": "react.calendar.containers.HomePage.tryme.atPrefix",
+    "defaultMessage": "@",
+    "message": ""
+  },
+  {
+    "id": "react.calendar.containers.HomePage.tryme.header",
+    "defaultMessage": "Try me!",
+    "message": "Probiere mich!"
+  },
+  {
+    "id": "react.calendar.containers.HomePage.tryme.message",
+    "defaultMessage": "Show Github repositories by",
+    "message": "Zeige die Github Repositories von"
+  },
+  {
+    "id": "react.calendar.containers.NotFoundPage.header",
+    "defaultMessage": "Page not found.",
+    "message": "Seite nicht gefunden."
+  },
+  {
+    "id": "react.calendar.containers.NotFoundPage.home",
+    "defaultMessage": "Home",
+    "message": ""
+  }
+]
