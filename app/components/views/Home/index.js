@@ -18,6 +18,8 @@
 
  import styles from './styles.css';
 
+ import CalendarContainer from 'containers/Calendar';
+
 function Home(props) {
 
 
@@ -38,18 +40,14 @@ function Home(props) {
             <FormattedMessage {...messages.startMessage} />
           </p>
         </section>
-        <section className={styles.textSection}>
-          <H2>
-            <FormattedMessage {...messages.trymeHeader} />
-          </H2>
-        </section>
+        <CalendarContainer/>
       </div>
     </article>
   );
 }
 
 Home.propTypes = {
-  
+
 };
 
 export default Home;
