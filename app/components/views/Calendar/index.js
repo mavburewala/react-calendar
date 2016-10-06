@@ -22,8 +22,10 @@
  export class Calendar extends React.Component {
 
    componentDidMount(){
-      console.log("I am loaded")
-   }
+      console.log("I am loaded", $('#dayView').offset(), $('#dayView').height(), $('#dayView').width())
+   };
+
+
    render() {
      let hours = [];
      let start = 0;
