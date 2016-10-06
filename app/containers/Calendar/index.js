@@ -27,9 +27,9 @@ export class CalendarContainer extends React.Component {
 
 
   render() {
-
+    const endTime = 540;
     return (
-      <Calendar></Calendar>
+      <Calendar endTime={endTime}></Calendar>
     );
   }
 }

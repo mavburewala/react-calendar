@@ -6,7 +6,8 @@
  * otherwise it'll render a link with an onclick
  */
 
- import React from 'react';
+ import React, { PropTypes } from 'react';
+
  import Helmet from 'react-helmet';
 
  import messages from './messages';
@@ -20,7 +21,31 @@
 
 function Calendar(props) {
 
+  console.log(props.endTime);
+  let hours = [];
+  let start = 0;
+  let index = 0;
+  let timeOfTheDay = 'AM'
+  while(start <= props.endTime){
+    let hour = 0 ;
+    if(index > 4 && timeOfTheDay !== 'PM'){
+      timeOfTheDay = 'PM';
+      index = 1;
 
+    }
+    if(timeOfTheDay === 'AM'){
+      hour = index + 8;
+    }
+    else{
+      hour = index;
+    }
+    index ++ ;
+    start = start + 60;
+    if(hour === 12){ timeOfTheDay = 'PM'; }
+    hours.push({start: hour+ ':00 '+ timeOfTheDay, middle: hour+ ':30 '+ timeOfTheDay})
+    console.log(start);
+  }
+  console.log("hours: ", hours);
   return (
     <div className="container-fluid">
       <div className={`row ${styles.hourSection}`}>
@@ -73,7 +98,7 @@ function Calendar(props) {
 }
 
 Calendar.propTypes = {
-
+  endTime: PropTypes.number,
 };
 
 export default Calendar;
