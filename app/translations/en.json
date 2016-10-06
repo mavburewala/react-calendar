@@ -116,13 +116,13 @@
   },
   {
     "id": "react.calendar.containers.HomePage.start_project.header",
-    "defaultMessage": "Start your next react project in seconds",
-    "message": "Start your next react project in seconds"
+    "defaultMessage": "React Calendar",
+    "message": "React Calendar"
   },
   {
     "id": "react.calendar.containers.HomePage.start_project.message",
-    "defaultMessage": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
-    "message": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices"
+    "defaultMessage": "Built Using React.Js",
+    "message": "Built Using React.Js"
   },
   {
     "id": "react.calendar.containers.HomePage.tryme.atPrefix",
