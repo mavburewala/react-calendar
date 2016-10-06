@@ -41,94 +41,36 @@ function Calendar(props) {
     }
     index ++ ;
     start = start + 60;
-    if(hour === 12){ timeOfTheDay = 'PM'; }
+    //if(hour === 12){ timeOfTheDay = 'PM'; }
     hours.push({start: hour+ ':00 '+ timeOfTheDay, middle: hour+ ':30 '+ timeOfTheDay})
     console.log(start);
   }
   console.log("hours: ", hours);
   return (
-    <div className="container-fluid">
-      <div className={`row ${styles.hourSection}`}>
-
-        <div className={`row ${styles.hourHalfSection} `}> 
-          <div className={`col-xs-1`}>
-            8:00 AM
+    <div>
+    { hours.map(function (hour, i) {
+      console.log("Hour: ", hour);
+      return <div className="container-fluid" key={i}>
+        <div className={`row ${styles.hourSection}`}>
+          <div className={`row ${styles.hourHalfSection} `}>
+            <div className={`col-xs-1`}>
+              {hour.start}
+            </div>
+            <div className={`col-xs-11`}>
+              .col-xs-11
+            </div>
           </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
-          </div>
-        </div>
-        <div className={`row ${styles.hourHalfSection} ${styles.dottedBorderTop} ${styles.solidBorderBottom}`}> 
-          <div className={`col-xs-1`}>
-            8:30 AM
-          </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
-          </div>
-        </div>
-      </div>
-
-
-      <div className={`row ${styles.hourSection}`}>
-
-        <div className={`row ${styles.hourHalfSection} `}> 
-          <div className={`col-xs-1`}>
-            9:00 AM
-          </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
+          <div className={`row ${styles.hourHalfSection} ${styles.dottedBorderTop} ${styles.solidBorderBottom}`}>
+            <div className={`col-xs-1`}>
+              {hour.middle}
+            </div>
+            <div className={`col-xs-11`}>
+              .col-xs-11
+            </div>
           </div>
         </div>
-        <div className={`row ${styles.hourHalfSection} ${styles.dottedBorderTop} ${styles.solidBorderBottom}`}> 
-          <div className={`col-xs-1`}>
-            9:30 AM
-          </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
-          </div>
-        </div>
-      </div>
-
-      <div className={`row ${styles.hourSection}`}>
-
-        <div className={`row ${styles.hourHalfSection} `}> 
-          <div className={`col-xs-1`}>
-            10:00 AM
-          </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
-          </div>
-        </div>
-        <div className={`row ${styles.hourHalfSection} ${styles.dottedBorderTop} ${styles.solidBorderBottom}`}> 
-          <div className={`col-xs-1`}>
-            10:30 AM
-          </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
-          </div>
-        </div>
-      </div>
-
-      <div className={`row ${styles.hourSection}`}>
-
-        <div className={`row ${styles.hourHalfSection} `}> 
-          <div className={`col-xs-1`}>
-            11:00 AM
-          </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
-          </div>
-        </div>
-        <div className={`row ${styles.hourHalfSection} ${styles.dottedBorderTop} ${styles.solidBorderBottom}`}> 
-          <div className={`col-xs-1`}>
-            11:30 AM
-          </div>
-          <div className={`col-xs-11`}>
-            .col-xs-11
-          </div>
-        </div>
-      </div>
-
+        </div>;
+      })}
     </div>
   );
 }
