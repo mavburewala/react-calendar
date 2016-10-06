@@ -22,42 +22,51 @@ function Calendar(props) {
 
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
+        <div className="col-xs-1 container">
+          <div className="row">8:00 AM</div>
+          <div className="row">8:30 AM</div>
+        </div>
+        <div className={`col-xs-11 ${styles.hourLine}`}>
+          .col-xs-11
+        </div>
       </div>
       <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
+      <div className="col-xs-1 container">
+        <div className="row">9:00 AM</div>
+        <div className="row">9:30 AM</div>
+      </div>
+        <div className={`col-xs-11 ${styles.hourLine}`}>
+          .col-xs-11
+        </div>
       </div>
       <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
+        <div className="col-xs-1 container">
+          <div className="row">10:00 AM</div>
+          <div className="row">10:30 AM</div>
+        </div>
+        <div className={`col-xs-11 ${styles.hourLine}`}>
+          .col-xs-11
+        </div>
       </div>
       <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
+        <div className="col-xs-1 container">
+          <div className="row">11:00 AM</div>
+          <div className="row">11:30 AM</div>
+        </div>
+        <div className={`col-xs-11 ${styles.hourLine}`}>
+          .col-xs-11
+        </div>
       </div>
       <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
-      </div>
-      <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
-      </div>
-      <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
-      </div>
-      <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
-      </div>
-      <div className={`row ${styles.hourSection}`}>
-        <div className="col-xs-2">.col-xs-2</div>
-        <div className="col-xs-10">.col-xs-10</div>
+        <div className="col-xs-1 container">
+          <div className="row">12:00 AM</div>
+          <div className="row">12:30 AM</div>
+        </div>
+        <div className={`col-xs-11 ${styles.hourLine}`}>
+          .col-xs-11
+        </div>
       </div>
     </div>
   );

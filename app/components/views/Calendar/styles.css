@@ -1,3 +1,9 @@
 .hourSection{
-  min-height: 100px
+  height: 200px;
+}
+
+.hourLine{
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  height: 100%
 }
