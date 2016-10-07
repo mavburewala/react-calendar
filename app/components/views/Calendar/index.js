@@ -21,12 +21,23 @@
 
  export class Calendar extends React.Component {
 
+   constructor(props){
+     super(props);
+     this.state = {
+       top: 0
+     }
+   }
+
+
    componentDidMount(){
-      console.log("I am loaded", $('#dayView').offset(), $('#dayView').height(), $('#dayView').width())
+      console.log("I am loaded", $('#dayView').offset(), $('#dayView').height(), $('#dayView').width(), $('#dayView').height())
+      const diff = $('#calendarEvents_0').offset().left - $('#dayView').offset().left;
+      this.setState({top: $('#dayView').offset().top+23, left: $('#calendarEvents_0').offset().left, width: $('#dayView').width()-diff, height: 2000})
    };
 
 
    render() {
+     console.log(this.state.height)
      let hours = [];
      let start = 0;
      let index = 0;
@@ -52,26 +63,23 @@
      console.log("hours: ", hours);
      return (
        <div className="container-fluid" id = "dayView">
-       { hours.map(function (hour, i) {
-         return <div className={`row ${styles.hourSection}`} key={i}>
-             <div className={`row ${styles.hourHalfSection} `}>
-               <div className={`col-xs-1`}>
-                 {hour.start}
-               </div>
-               <div className={`col-xs-11`}>
-                 .col-xs-11
-               </div>
-             </div>
-             <div className={`row ${styles.hourHalfSection} ${styles.dottedBorderTop} ${styles.solidBorderBottom}`}>
-               <div className={`col-xs-1`}>
-                 {hour.middle}
-               </div>
-               <div className={`col-xs-11`}>
-                 .col-xs-11
-               </div>
-             </div>
-           </div>;
-         })}
+          <div className={`col-xs-1 ${styles.hourSection}`}>
+            { hours.map(function (hour, i) {
+              return <div key={i} className={`row ${styles.hourTitle}`}>
+                  {hour.start}
+                </div>;
+            })}
+          </div>
+          <div className={`col-xs-11 ${styles.hourSection}`}>
+            { hours.map(function (hour, i) {
+              return <div key={i} className={`row ${styles.hourTitle}`} id={`calendarEvents_${i}`}>
+                  {hour.start}
+                </div>;
+            })}
+          </div>
+          <div className={`col-xs-11 ${styles.eventsSection}`} style={{top: this.state.top, left: this.state.left, width: this.state.width, height: this.state.height}}>
+            nadeem
+          </div>
        </div>
      );
    }

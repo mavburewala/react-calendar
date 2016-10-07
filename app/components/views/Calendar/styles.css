@@ -1,5 +1,15 @@
 .hourSection{
+  height: 100%;
+}
+
+.hourTitle{
   height: 200px;
+  border-top: 1px solid gray;
+}
+
+.eventsSection{
+  position: absolute;
+  background: lightgreen;
 }
 
 .hourHalfSection{
@@ -18,4 +28,11 @@
   border-bottom: 1px solid;
   border-top: 1px solid;
   height: 100%
+}
+
+.eventSection{
+  position: absolute;
+  background: lightgreen;
+  height:100px;
+  width: 100px;
 }
