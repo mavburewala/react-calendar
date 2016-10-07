@@ -26,6 +26,12 @@
   right: 0;
 }
 
+.eventEntry{
+  background: #E2ECF5;
+  border: solid #6E9ECF;
+  position: absolute;
+}
+
 .hourHalfSection{
 	height: 100px;
 }

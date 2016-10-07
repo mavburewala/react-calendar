@@ -24,20 +24,23 @@
    constructor(props){
      super(props);
      this.state = {
-       top: 0
+       eventsSectionHeight: 0
      }
    }
 
 
    componentDidMount(){
      console.log("Here");
-     setTimeout(() => {console.log($('#eventsSection').height(), $('#eventsSection').width()) });
+     setTimeout(() => {
+       const width = $('#eventsSection').width();
+       const height = $('#eventsSection').height();
+       console.log(width, height);
+       this.setState({eventsSectionWidth: width, eventsSectionHeight: height});
+     });
    };
 
 
    render() {
-     console.log(this.state.height)
-     console.log("Going to render");
      let hours = [];
      let start = 0;
      let index = 0;
@@ -60,7 +63,7 @@
        //if(hour === 12){ timeOfTheDay = 'PM'; }
        hours.push({start: hour+ ':00 '+ timeOfTheDay, middle: hour+ ':30 '+ timeOfTheDay})
      }
-     console.log("hours: ", hours);
+     console.log("this.state: ", this.state);
      return (
        <div className={`container-fluid ${styles.dayViewMain}`} id = "dayView">
           <div className={`container-fluid ${styles.dayViewSkeleton}`}>
@@ -74,8 +77,16 @@
 
           </div>
           <div className={`col-xs-10 ${styles.eventsSection}`} id = {`eventsSection`}>
-                      nadeem
-                    </div>
+            { this.props.events.map(function (event, i) {
+              return <div
+                key={i}
+                className={`${styles.eventEntry}`}
+                style={{top: event.start * (2000/540), height: event.duration * (2000/540), width: 610}}
+                >
+                  {event.title}
+                </div>;
+            })}
+          </div>
        </div>
      );
    }
