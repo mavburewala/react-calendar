@@ -1,5 +1,15 @@
+.dayViewMain{
+   position: relative;
+}
+
+.dayViewSkeleton{
+
+
+}
+
 .hourSection{
   height: 100%;
+  margin-right: 10px
 }
 
 .hourTitle{
@@ -9,7 +19,11 @@
 
 .eventsSection{
   position: absolute;
-  background: lightgreen;
+  background: lightgrey;
+  opacity:0.5;
+  height: 100%;
+  top: 0;
+  right: 0;
 }
 
 .hourHalfSection{
