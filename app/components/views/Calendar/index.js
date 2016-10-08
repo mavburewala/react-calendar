@@ -32,18 +32,13 @@
 
 
    componentDidMount(){
-     console.log("Here");
      setTimeout(() => {
        const width = $('#eventsSection').width();
        const height = $('#eventsSection').height();
-       console.log(width, height);
-       this.setState({eventsSectionWidth: width, eventsSectionHeight: height});
-     });
+       console.log("width and height", width, height);
+       this.setState({distancePerMinute: height/this.props.endTime});
+     }, 10);
    };
-
-   isConflicting(eventA, eventB){
-     return (eventA.start+ eventA.duration) > eventB.start;
-   }
 
    intersectingEvents(r1, r2) {
       return !(r2.left > r1.right ||
@@ -69,7 +64,6 @@
           bottom: event.top + event.height
         };
        if(this.intersectingEvents(eventA, eventB)){
-         console.log("Intersecting: ", events[i], event, eventA, eventB);
          event.left = events[i].left + 210;
        }
      }
@@ -77,10 +71,11 @@
 
    calculateConflictingEvents(){
      let events = this.props.events;
+     var self = this;
      events = _.sortBy(events, 'start');
      for(let i = 0; i< events.length; i++){
-       events[i].top = events[i].start * (2000/540);
-       events[i].height = events[i].duration * (2000/540),
+       events[i].top = events[i].start * self.state.distancePerMinute;
+       events[i].height = events[i].duration * self.state.distancePerMinute,
        events[i].left = 15;
        this.allConflictingEvents(events[i], events.slice(0, _.indexOf(events, events[i])));
      }
@@ -88,6 +83,7 @@
    }
 
    render() {
+     var self = this;
      let hours = [];
      let start = 0;
      let index = 0;
@@ -127,9 +123,9 @@
               return <div
                 key={i}
                 className={`row ${styles.eventEntry}`}
-                style={{top: event.start * (2000/540),
-                  height: event.duration * (2000/540),
-                  left: event.left? event.left: 15,
+                style={{top: event.top,
+                  height: event.height,
+                  left: event.left,
                 }}
                 >
                   {event.title}
