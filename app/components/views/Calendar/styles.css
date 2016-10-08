@@ -30,6 +30,8 @@
   background: #E2ECF5;
   border: solid #6E9ECF;
   position: absolute;
+  width: 200px;
+  margin-right: 2%;
 }
 
 .hourHalfSection{
