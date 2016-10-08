@@ -5,7 +5,6 @@ import styles from './styles.css';
 function Event(props) {
   return (
     <div
-    key={i}
     className={`row ${styles.eventEntry}`}
     style={{top: props.eventData.top,
       height: props.eventData.height,
@@ -17,7 +16,7 @@ function Event(props) {
   );
 }
 
-Calendar.propTypes = {
+Event.propTypes = {
   eventData: React.PropTypes.object,
 };
 

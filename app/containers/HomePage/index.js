@@ -14,7 +14,7 @@ import { createStructuredSelector } from 'reselect';
 
 import Home from 'components/views/Home';
 
-export class HomePage extends React.Component {
+class HomePage extends React.Component {
 
   /**
    * Changes the route

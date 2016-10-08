@@ -122,8 +122,8 @@
           </div>
           <div className={`col-xs-10 ${styles.eventsSection}`} id = {`eventsSection`}>
             {this.calculateConflictingEvents(this.props.events).map(function (event, i) {
-                return <Event eventData={event}> </Event>
-            })} 
+                return <Event eventData={event} key={i}> </Event>
+            })}
           </div>
        </div>
      );
