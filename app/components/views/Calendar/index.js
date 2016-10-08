@@ -19,6 +19,8 @@
  import Button from 'components/widgets/Button';
  import H2 from 'components/widgets/H2';
 
+ import Event from 'components/widgets/event';
+
  import styles from './styles.css';
 
  export class Calendar extends React.Component {
@@ -119,18 +121,9 @@
 
           </div>
           <div className={`col-xs-10 ${styles.eventsSection}`} id = {`eventsSection`}>
-            { this.calculateConflictingEvents(this.props.events).map(function (event, i) {
-              return <div
-                key={i}
-                className={`row ${styles.eventEntry}`}
-                style={{top: event.top,
-                  height: event.height,
-                  left: event.left,
-                }}
-                >
-                  {event.title}
-                </div>;
-            })}
+            {this.calculateConflictingEvents(this.props.events).map(function (event, i) {
+                return <Event eventData={event}> </Event>
+            })} 
           </div>
        </div>
      );
