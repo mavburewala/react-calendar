@@ -12,6 +12,8 @@
 
  import Event from 'components/widgets/event';
 
+ import $ from 'jquery';
+
  import styles from './styles.css';
 
  export class Calendar extends React.Component {
@@ -89,25 +91,20 @@
        }
        index += 1;
        start += 60;
-       //hours.push( {start: hour+ ':00 '+ timeOfTheDay, middle: hour+ ':30 '+ timeOfTheDay} )
-       hours.push({ start: `hour:00 ${timeOfTheDay}`, middle: `hour:30 ${timeOfTheDay}` });
+       // hours.push( {start: hour+ ':00 '+ timeOfTheDay, middle: hour+ ':30 '+ timeOfTheDay} )
+       hours.push({ start: `${hour}:00 ${timeOfTheDay}`, middle: `${hour}:30 ${timeOfTheDay}` });
      }
+
+     const events = this.calculateConflictingEvents(this.props.events);
      return (
        <div className={`container-fluid ${styles.dayViewMain}`} id="dayView">
          <div className={`container-fluid ${styles.dayViewSkeleton}`}>
            <div className={`col-xs-12 ${styles.hourSection}`}>
-             { hours.map((hour, i) => {
-               return <div key={i} className={`row ${styles.hourTitle}`}>
-                 {hour.start}
-               </div>;
-             })}
+             {hours.map((hour, i) => <div key={i} className={`row ${styles.hourTitle}`}>{hour.start}</div>)}
            </div>
-
          </div>
          <div className={`col-xs-10 ${styles.eventsSection}`} id="eventsSection">
-           {this.calculateConflictingEvents(this.props.events).map(function (event, i) {
-             return <Event eventData={event} key={i}> </Event>;
-           })}
+          {events.map((event, i) => <Event eventData={event} key={i} />)}
          </div>
        </div>
      );
