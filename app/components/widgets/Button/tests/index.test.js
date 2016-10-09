@@ -18,34 +18,6 @@ const renderComponent = (props = {}) => shallow(
 );
 
 describe('<Button />', () => {
-  it('should render an <a> tag if no route is specified', () => {
-    const renderedComponent = renderComponent({ href });
-    expect(renderedComponent.find('a').length).toEqual(1);
-  });
-
-  it('should render a button to change route if the handleRoute prop is specified', () => {
-    const renderedComponent = renderComponent({ handleRoute });
-    expect(renderedComponent.find('button').length).toEqual(1);
-  });
-
-  it('should have children', () => {
-    const renderedComponent = renderComponent();
-    expect(renderedComponent.contains(children)).toEqual(true);
-  });
-
-  it('should handle click events', () => {
-    const onClickSpy = expect.createSpy();
-    const renderedComponent = renderComponent({ onClick: onClickSpy });
-    renderedComponent.find('a').simulate('click');
-    expect(onClickSpy).toHaveBeenCalled();
-  });
-
-  it('should adopt a className attribute', () => {
-    const className = 'test';
-    const renderedComponent = renderComponent({ className });
-    expect(renderedComponent.find('a').hasClass(className)).toEqual(true);
-  });
-
   it('should not adopt a type attribute when rendering an <a> tag', () => {
     const type = 'text/html';
     const renderedComponent = renderComponent({ href, type });
