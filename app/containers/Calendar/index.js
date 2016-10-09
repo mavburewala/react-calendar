@@ -10,7 +10,7 @@ import { push } from 'react-router-redux';
 
 import { createStructuredSelector } from 'reselect';
 
-import {selectEvents, selectTotalTime} from './selectors';
+import { selectEvents, selectTotalTime } from './selectors';
 
 
 import Calendar from 'components/views/Calendar';

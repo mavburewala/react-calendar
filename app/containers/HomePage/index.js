@@ -7,7 +7,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import Helmet from 'react-helmet';
 
 import { createStructuredSelector } from 'reselect';
 
@@ -27,7 +26,6 @@ class HomePage extends React.Component {
 
 
   render() {
-
     return (
       <Home></Home>
     );

@@ -4,8 +4,6 @@
 
 import { createSelector } from 'reselect';
 
-
-
 const selectHome = () => (state) => state.get('home');
 
 const selectEvents = () => createSelector(
@@ -18,9 +16,7 @@ const selectTotalTime = () => createSelector(
   (homeState) => homeState.get('endTime')
 );
 
-
-
 export {
   selectEvents,
-  selectTotalTime
+  selectTotalTime,
 };
