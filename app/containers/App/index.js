@@ -12,9 +12,7 @@ import Helmet from 'react-helmet';
 // Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
 import 'sanitize.css/sanitize.css';
 
-import Img from 'components/widgets/Img';
 import Footer from 'components/widgets/Footer';
-import A from 'components/widgets/A';
 
 import styles from './styles.css';
 
