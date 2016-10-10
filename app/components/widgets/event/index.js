@@ -9,6 +9,7 @@ function Event(props) {
       style={{ top: props.eventData.top,
         height: props.eventData.height,
         left: props.eventData.left,
+        width: props.eventData.width,
       }}
     >
       {props.eventData.title}
