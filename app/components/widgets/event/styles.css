@@ -1,15 +1,12 @@
-.eventsSection {
-  position: absolute;
-  background: lightgrey;
-  opacity: 0.5;
-  height: 100%;
-  top: 0;
-  right: 0;
-}
-
 .eventEntry {
   background: #E2ECF5;
   border-left: solid #6E9ECF;
   position: absolute;
   opacity: 0.9;
+  font-family: "Open Sans", Times, serif;
+  font-size: 14px;
+  padding: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

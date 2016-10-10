@@ -36,7 +36,7 @@
      }, 10);
    }
 
-   calculateConflictingEvents() {
+   getEventsWithPositions() {
      const self = this;
      const events = _.sortBy(this.props.events, 'start');
      for (let i = 0; i < events.length; i += 1) {
@@ -46,8 +46,8 @@
      const dayEvents = new DayEvents({ distancePerMinute: self.state.distancePerMinute, containerWidth: self.state.eventsSectionWidth });
 
      if (events) {
-       dayEvents.add(events);
-       dayEvents.calculateCollisionGroups();
+       dayEvents.addEvents(events);
+       dayEvents.calculateOverlappingGroups();
        dayEvents.calculatePositions();
      }
 
@@ -72,15 +72,14 @@
        }
        index += 1;
        start += 60;
-       // hours.push( {start: hour+ ':00 '+ timeOfTheDay, middle: hour+ ':30 '+ timeOfTheDay} )
        hours.push({ start: `${hour}:00 ${timeOfTheDay}`, middle: `${hour}:30 ${timeOfTheDay}` });
      }
 
-     const events = this.calculateConflictingEvents(this.props.events);
+     const events = this.getEventsWithPositions(this.props.events);
      return (
        <div className={`container-fluid ${styles.dayViewMain}`} id="dayView">
          <div className={`container-fluid ${styles.dayViewSkeleton}`}>
-           <div className={`col-xs-12 ${styles.hourSection}`}>
+           <div className={`col-xs-12 ${styles.hourSection}`} >
              {hours.map((hour, i) => <div key={i} className={`row ${styles.hourTitle}`}>{hour.start}</div>)}
            </div>
          </div>

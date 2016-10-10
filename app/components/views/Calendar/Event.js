@@ -12,7 +12,7 @@ class Event {
     this.widthDivisor = null;
   }
 
-  collidesWith(otherEvent) {
+  overlapsWith(otherEvent) {
     if ((this.start <= otherEvent.start && otherEvent.start <= this.end) ||
          (this.start <= otherEvent.end && otherEvent.end <= this.end) ||
          (otherEvent.start <= this.start && this.start <= otherEvent.end) ||
