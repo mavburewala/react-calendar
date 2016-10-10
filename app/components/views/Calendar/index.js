@@ -31,7 +31,8 @@
    componentDidMount() {
      setTimeout(() => {
        const height = $('#eventsSection').height();
-       this.setState({ distancePerMinute: height / this.props.endTime });
+       const width = $('#eventsSection').width();
+       this.setState({ distancePerMinute: height / this.props.endTime, eventsSectionWidth: width });
      }, 10);
    }
 
@@ -42,14 +43,12 @@
        events[i].end = events[i].start + events[i].duration;
        events[i].id = i;
      }
-     const eventCollection = new EventCollection({ distancePerMinute: self.state.distancePerMinute });
+     const eventCollection = new EventCollection({ distancePerMinute: self.state.distancePerMinute, containerWidth: self.state.eventsSectionWidth });
 
      if (events) {
        eventCollection.add(events);
        eventCollection.calculateCollisionGroups();
        eventCollection.calculatePositions();
-       // Return the raw events for testing purposes
-       eventCollection.raw();
      }
 
      return eventCollection.events;
