@@ -1,23 +1,18 @@
-.dayViewMain{
-   position: relative;
+.dayViewMain {
+  position: relative;
 }
 
-.dayViewSkeleton{
-
-
-}
-
-.hourSection{
+.hourSection {
   height: 100%;
-  margin-right: 10px
+  margin-right: 10px;
 }
 
-.hourTitle{
+.hourTitle {
   height: 200px;
   border-top: 1px solid gray;
 }
 
-.eventsSection{
+.eventsSection {
   position: absolute;
   opacity:0.5;
   height: 100%;
@@ -25,7 +20,7 @@
   right: 0;
 }
 
-.eventEntry{
+.eventEntry {
   background: #E2ECF5;
   border: solid #6E9ECF;
   position: absolute;
@@ -33,27 +28,27 @@
   margin-right: 2%;
 }
 
-.hourHalfSection{
-	height: 100px;
+.hourHalfSection {
+  height: 100px;
 }
 
-.dottedBorderTop{
-	border-top: 1px dotted gray;
+.dottedBorderTop {
+  border-top: 1px dotted gray;
 }
 
-.solidBorderBottom{
-	border-bottom: 1px solid black;
+.solidBorderBottom {
+  border-bottom: 1px solid black;
 }
 
-.hourLine{
+.hourLine {
   border-bottom: 1px solid;
   border-top: 1px solid;
-  height: 100%
+  height: 100%;
 }
 
-.eventSection{
+.eventSection {
   position: absolute;
   background: lightgreen;
-  height:100px;
+  height: 100px;
   width: 100px;
 }
