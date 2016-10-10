@@ -4,7 +4,7 @@ import _ from 'lodash';
 class DayEvents {
   constructor(options = {}) {
     const defaults = {
-      containerWidth: 700,
+      containerWidth: 200,
       eventLeftOffset: 15,
       eventHorizontalPadding: 10,
       eventVerticalPadding: 1,
@@ -15,18 +15,18 @@ class DayEvents {
     this.length = 0;
     this.collisionGroups = [];
   }
-  add(events) {
+  addEvents(events) {
     this.events = [];
     _.forEach(events, (event) => this.events.push(new Event(event)));
     this.events = _.sortBy(this.events, 'start');
     this.length = this.events.length;
   }
 
-  findById(id) {
+  findEventById(id) {
     return _.find(this.events, (event) => event.id === id);
   }
 
-  calculateCollisionGroups() {
+  calculateOverlappingGroups() {
     const events = this.events;
     const collisionGroups = [];
     collisionGroups[0] = [];
@@ -39,7 +39,7 @@ class DayEvents {
       let j = i - 1;
       do {
         const previousEvent = events[j];
-        if (event.collidesWith(previousEvent)) {
+        if (event.overlapsWith(previousEvent)) {
           let found2 = false;
           let k = collisionGroups.length;
 
@@ -71,15 +71,13 @@ class DayEvents {
 
     const collisionGroups = this.collisionGroups;
 
-    for (let i = 0; i < collisionGroups.length; i += 1) {
-      const group = collisionGroups[i];
-
+    _.forEach(collisionGroups, (group) => {
       const matrix = [];
 
       matrix[0] = [];
 
-      for (let j = 0; j < group.length; j += 1) {
-        const event = this.findById(group[j]);
+      _.forEach(group, (groupEntry) => {
+        const event = this.findEventById(groupEntry);
         let col = 0;
         let found = false;
         while (!found) {
@@ -90,7 +88,7 @@ class DayEvents {
             found = true;
           } else {
             const existingevent = matrix[row][col];
-            if (!event.collidesWith(existingevent)) {
+            if (!event.overlapsWith(existingevent)) {
               if (matrix[row + 1] === undefined) {
                 matrix[row + 1] = [];
               }
@@ -101,7 +99,7 @@ class DayEvents {
 
           col += 1;
         }
-      }
+      });
 
       let maxRowLength = 1;
       _.forEach(matrix, (matrixEntry) => { maxRowLength = Math.max(maxRowLength, matrixEntry.length); });
@@ -118,7 +116,7 @@ class DayEvents {
         event.left = eventLeftPositions[col];
         event.width = eventWidth;
       }));
-    }
+    });
   }
 
   getMatrixColumnLastRow(matrix, col) {

@@ -46,8 +46,8 @@
      const dayEvents = new DayEvents({ distancePerMinute: self.state.distancePerMinute, containerWidth: self.state.eventsSectionWidth });
 
      if (events) {
-       dayEvents.add(events);
-       dayEvents.calculateCollisionGroups();
+       dayEvents.addEvents(events);
+       dayEvents.calculateOverlappingGroups();
        dayEvents.calculatePositions();
      }
 
