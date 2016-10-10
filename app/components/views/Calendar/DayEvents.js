@@ -1,7 +1,7 @@
 import Event from './Event';
 import _ from 'lodash';
 
-class EventCollection {
+class DayEvents {
   constructor(options = {}) {
     const defaults = {
       containerWidth: 700,
@@ -137,4 +137,4 @@ class EventCollection {
   }
 }
 
-export { EventCollection as default };
+export { DayEvents as default };

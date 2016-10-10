@@ -16,7 +16,7 @@
 
  import styles from './styles.css';
 
- import EventCollection from './EventCollection';
+ import DayEvents from './DayEvents';
 
  export class Calendar extends React.Component {
 
@@ -43,17 +43,15 @@
        events[i].end = events[i].start + events[i].duration;
        events[i].id = i;
      }
-     const eventCollection = new EventCollection({ distancePerMinute: self.state.distancePerMinute, containerWidth: self.state.eventsSectionWidth });
+     const dayEvents = new DayEvents({ distancePerMinute: self.state.distancePerMinute, containerWidth: self.state.eventsSectionWidth });
 
      if (events) {
-       eventCollection.add(events);
-       eventCollection.calculateCollisionGroups();
-       eventCollection.calculatePositions();
+       dayEvents.add(events);
+       dayEvents.calculateCollisionGroups();
+       dayEvents.calculatePositions();
      }
 
-     return eventCollection.events;
-
-     // return events;
+     return dayEvents.events;
    }
 
    render() {
