@@ -16,6 +16,8 @@
 
  import styles from './styles.css';
 
+ import EventCollection from './EventCollection';
+
  export class Calendar extends React.Component {
 
    constructor(props) {
@@ -33,44 +35,26 @@
      }, 10);
    }
 
-   intersectingEvents(r1, r2) {
-     return !(r2.left > r1.right || r2.right < r1.left || r2.top > r1.bottom || r2.bottom < r1.top);
-   }
-
-   allConflictingEvents(event, events) {
-     for (let i = 0; i < events.length; i += 1) {
-       const eventA = {
-         left: events[i].left,
-         top: events[i].top,
-         right: events[i].left + 200,
-         bottom: events[i].top + events[i].height,
-       };
-
-       const eventB = {
-         left: event.left,
-         top: event.top,
-         right: event.left + 200,
-         bottom: event.top + event.height,
-       };
-
-       if (this.intersectingEvents(eventA, eventB)) {
-         const left = events[i].left;
-         event.left = left + 210;
-       }
-     }
-   }
-
    calculateConflictingEvents() {
-     let events = this.props.events;
      const self = this;
-     events = _.sortBy(events, 'start');
+     const events = _.sortBy(this.props.events, 'start');
      for (let i = 0; i < events.length; i += 1) {
-       events[i].top = events[i].start * self.state.distancePerMinute;
-       events[i].height = events[i].duration * self.state.distancePerMinute;
-       events[i].left = 15;
-       this.allConflictingEvents(events[i], events.slice(0, _.indexOf(events, events[i])));
+       events[i].end = events[i].start + events[i].duration;
+       events[i].id = i;
      }
-     return events;
+     const eventCollection = new EventCollection({ distancePerMinute: self.state.distancePerMinute });
+
+     if (events) {
+       eventCollection.add(events);
+       eventCollection.calculateCollisionGroups();
+       eventCollection.calculatePositions();
+       // Return the raw events for testing purposes
+       eventCollection.raw();
+     }
+
+     return eventCollection.events;
+
+     // return events;
    }
 
    render() {
