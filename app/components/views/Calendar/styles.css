@@ -10,9 +10,15 @@
 .hourTitle {
   height: 200px;
   border-top: 1px solid gray;
-  font-family: "Open Sans", Times, serif;
+  font-family: 'Open Sans', Times, serif;
   font-size: 16px;
-  font-weight: 200px
+  font-weight: 200px;
+}
+
+.hourSubTitle {
+  font-family: 'Open Sans', Times, serif;
+  font-size: 12px;
+  font-weight: 200px;
 }
 
 .eventsSection {

@@ -80,10 +80,15 @@
        <div className={`container-fluid ${styles.dayViewMain}`} id="dayView">
          <div className={`container-fluid ${styles.dayViewSkeleton}`}>
            <div className={`col-xs-12 ${styles.hourSection}`} >
-             {hours.map((hour, i) => <div key={i} className={`row ${styles.hourTitle}`}>{hour.start}</div>)}
+             {hours.map((hour, i) => <div key={i} className={`row ${styles.hourTitle}`}>
+              {hour.start}
+               <div className={`${styles.hourSubTitle}`} style={{ marginTop: (this.state.distancePerMinute * 60) / 3 }}>
+                {hour.middle}
+               </div>
+             </div>)}
            </div>
          </div>
-         <div className={`col-xs-10 ${styles.eventsSection}`} id="eventsSection">
+         <div className={`col-xs-10 ${styles.eventsSection}`} id="eventsSection" >
           {events.map((event, i) => <Event eventData={event} key={i} />)}
          </div>
        </div>
