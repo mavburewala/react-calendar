@@ -17,11 +17,8 @@ class DayEvents {
   }
   add(events) {
     this.events = [];
-    for (let i = 0; i < events.length; i += 1) {
-      this.events.push(new Event(events[i]));
-    }
+    _.forEach(events, (event) => this.events.push(new Event(event)));
     this.events = _.sortBy(this.events, 'start');
-
     this.length = this.events.length;
   }
 
@@ -67,10 +64,10 @@ class DayEvents {
   }
 
   calculatePositions() {
-    for (let i = 0; i < this.events.length; i += 1) {
-      this.events[i].top = this.events[i].start * this.options.distancePerMinute;
-      this.events[i].height = this.events[i].duration * this.options.distancePerMinute;
-    }
+    _.forEach(this.events, (event) => {
+      event.top = event.start * this.options.distancePerMinute;
+      event.height = event.duration * this.options.distancePerMinute;
+    });
 
     const collisionGroups = this.collisionGroups;
 
@@ -107,9 +104,8 @@ class DayEvents {
       }
 
       let maxRowLength = 1;
-      for (let j = 0; j < matrix.length; j += 1) {
-        maxRowLength = Math.max(maxRowLength, matrix[j].length);
-      }
+      _.forEach(matrix, (matrixEntry) => { maxRowLength = Math.max(maxRowLength, matrixEntry.length); });
+
       const eventWidth = (this.options.containerWidth - this.options.eventHorizontalPadding) / maxRowLength;
 
       const eventLeftPositions = [];
@@ -117,13 +113,11 @@ class DayEvents {
         eventLeftPositions[j] = (eventWidth * j) + (this.options.eventLeftOffset);
       }
 
-      for (let row = 0; row < matrix.length; row += 1) {
-        for (let col = 0; col < matrix[row].length; col += 1) {
-          const event = matrix[row][col];
-          event.left = eventLeftPositions[col];
-          event.width = eventWidth;
-        }
-      }
+      _.forEach(matrix, (matrixEntry) => _.forEach(matrixEntry, (matrixSubEntry, col) => {
+        const event = matrixSubEntry;
+        event.left = eventLeftPositions[col];
+        event.width = eventWidth;
+      }));
     }
   }
 
